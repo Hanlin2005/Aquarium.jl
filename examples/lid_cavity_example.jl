@@ -74,8 +74,9 @@ t_hist, u_hist, p_hist = simulate(normalized_fluid, uk, pk; λ=1e-6, tol=1e-6, t
 ##############################
 ## save data
 ##############################
-
-mkdir(joinpath(DATADIR, "lid_cavity"); exist_ok = true)
+if !isdir(joinpath(DATADIR, "lid_cavity"))
+    mkdir(joinpath(DATADIR, "lid_cavity"))
+end
 save_file = joinpath(DATADIR, "lid_cavity", "lid_cavity_0to1_sec.jld2")
 jldsave(save_file; normalized_fluid, ref_L, ref_u, t_hist, u_hist, p_hist)
 
