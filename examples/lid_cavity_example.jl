@@ -96,8 +96,8 @@ uk = u_hist[end]
 
 uk_avg = average(normalized_fluid, uk)
 
-scene = plot_streamlines(normalized_fluid, uk_avg; density=100)
-display(scene)
+fig1 = plot_streamlines(normalized_fluid, uk_avg; density=100)
+save(joinpath(VISDIR, "lid_streamlines.png"), fig1)
 
-scene = plot_vorticity(normalized_fluid, uk_avg; levels=100)
-display(scene)
+fig2 = plot_vorticity(normalized_fluid, uk_avg; levels=100)
+save(joinpath(VISDIR, "lid_vorticity.png"), fig2)
