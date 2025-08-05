@@ -923,7 +923,7 @@ function u_interpolate(uv, xs)
     f_v=scale(interpolate(uv[2]',BSpline(Quadratic(Reflect(OnCell())))), xs[1], xs[2])
 
     function velocity(x,y)
-        Point2f0(f_u(x,y),f_v(x,y))
+        Point2f(f_u(x,y),f_v(x,y))
     end
 
     return velocity
