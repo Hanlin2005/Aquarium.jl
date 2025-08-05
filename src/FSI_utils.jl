@@ -904,7 +904,7 @@ function plot_streamlines(model::CFDModel, u::AbstractVector;
     fig = Figure(resolution = resolution)
     ax = Axis(fig[1,1], xlabel = "x", ylabel = "y")
     streamplot!(ax, lift(a -> u_int(to_value(a)),uvn),
-        x_u, y_u, color=:blue, arrow_size=0.02,
+        x_u, y_u, arrow_size=0.02,
         gridsize=(density, density, density),
         colormap=colormap, linewidth=linewidth
     )
